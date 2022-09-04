@@ -1,18 +1,20 @@
+import React, { useState } from "react";
+import MiApi from "./components/MiApi";
 import Header from "./components/Header";
 import Descripcion from "./components/Descripcion";
-import MiApi from "./components/MiApi"
 import Footer from "./components/Footer";
 
+export default function App() {
+  const [feriados, setFeriados] = useState([]);
 
-function App() {
   return (
     <div className="App">
-<Header />
-<Descripcion />
-<MiApi/>
-<Footer />
+      <Header />
+      <Descripcion feriados={feriados} />
+      <MiApi setFeriados={setFeriados} />
+      <Footer />
     </div>
   );
 }
 
-export default App;
+
